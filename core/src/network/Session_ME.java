@@ -103,7 +103,7 @@ public class Session_ME implements ISession {
 
     private synchronized void doSendMessage(Message m) throws IOException {
         byte[] data = m.getData();
-
+        System.out.println("Client send cmd: " + m.command);
         try {
             if (this.getKeyComplete) {
                 byte b = this.writeKey(m.command);
@@ -548,6 +548,7 @@ public class Session_ME implements ISession {
         }
 
         public void doConnect(String host, int port) throws Exception {
+            System.out.printf("Handshake at %s, %d", host, port);
             Session_ME._mSocket = new mSocket(host, port);
             if (Session_ME._mSocket != null) {
                 Session_ME._mSocket.setKeepAlive(true);

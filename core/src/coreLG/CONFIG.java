@@ -1,10 +1,10 @@
 package coreLG;
 
 public class CONFIG {
-    public static String ROOT_LOCAL_URL = "LOCAL:192.168.1.88:19149";
+    public static String ROOT_LOCAL_URL = "localhost:2002";
     public static String ROOT_LOCAL_URL_2 = "LOCAL:192.168.1.88:19150";
     public static String ROOT_LOCAL_WEB_URL = "LOCAL:192.168.1.88:19146";
-    public static String ROOT_SERVER_MATTROI_URL_TEST = "Arriety:27.0.12.164:19149";
+    public static String ROOT_SERVER_MATTROI_URL_TEST = "localhost:2002";
     public static String ROOT_CLOUD_URL = "";
     public static String EDITOR_DATA_BASE = "";
     public static String DATA_BASE = "";

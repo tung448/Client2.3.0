@@ -246,13 +246,13 @@ public class CCanvas extends MotherCanvas implements IActionListener {
         }
 
         if (gameTick % 50 == 0) {
-            GameService.gI().ping(gameTick, -1L);
+//            GameService.gI().ping(gameTick, -1L);
             if (Session_ME.gI().connected) {
                 ++GameMidlet.pingCount;
             }
         }
 
-        if (GameMidlet.server == 2 && GameMidlet.pingCount > 15 && !isReconnect && Session_ME.gI().connected) {
+        if (GameMidlet.server == -1 && GameMidlet.pingCount > 15 && !isReconnect && Session_ME.gI().connected) {
             isReconnect = true;
             startYesNoDlg(Language.reConnect(), new IAction() {
                 public void perform() {
@@ -539,8 +539,8 @@ public class CCanvas extends MotherCanvas implements IActionListener {
                         msg.reader().read(fData, 0, maxDame);
                         short[] values = new short[5];
 
-                        for (i = 0; i < 5; ++i) {
-                            values[i] = msg.reader().readShort();
+                        for (int j = 0; j < 5; ++j) {
+                            values[j] = msg.reader().readShort();
                         }
 
                         MM.mapName[i] = msg.reader().readUTF();

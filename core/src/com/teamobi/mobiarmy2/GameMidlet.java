@@ -30,8 +30,8 @@ import screen.ServerListScreen;
 public class GameMidlet extends MIDlet implements IActionListener {
     public static GameMidlet instance = new GameMidlet();
     public static CCanvas gameCanvas;
-    public static String version = "2.4.1";
-    public static short versionByte = 241;
+    public static String version = "2.3.0";
+    public static short versionByte = 230;
     public static byte versioncode = 11;
     public static byte server = -2;
     public static String serverName;
@@ -227,14 +227,14 @@ public class GameMidlet extends MIDlet implements IActionListener {
 
                     if (versionByte < 240) {
                         ServerListScreen.nameServer[len] = "Mặt Trời";
-                        ServerListScreen.address[len] = "27.0.12.164";
-                        ServerListScreen.port[len] = 19149;
+                        ServerListScreen.address[len] = "localhost";
+                        ServerListScreen.port[len] = 2002;
                     }
 
                     for (int i = 0; i < len; ++i) {
                         ServerListScreen.nameServer[i] = dis.readUTF();
-                        ServerListScreen.address[i] = dis.readUTF();
-                        ServerListScreen.port[i] = dis.readShort();
+                        ServerListScreen.address[i] = "localhost";
+                        ServerListScreen.port[i] = 2002;
                     }
 
                     dis.close();

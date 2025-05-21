@@ -100,7 +100,7 @@ public class MessageHandler implements IMessageHandler {
                         GameService.gI().platform_request();
                         GameService.gI().bangxephang((byte) -1, -1);
                         currt = System.currentTimeMillis();
-                        GameService.gI().ping(dem, -1L);
+//                        GameService.gI().ping(dem, -1L);
                         TerrainMidlet.myInfo = new PlayerInfo();
                         if (GameMidlet.server == 2) {
                             TerrainMidlet.myInfo.name = msg.reader().readUTF();
@@ -228,12 +228,13 @@ public class MessageHandler implements IMessageHandler {
                         }
                         CCanvas.roomListScr2.isEmptyRoom = false;
                         CCanvas.roomListScr2.setRoomList(roomList);
+                        System.out.println(roomList.size());
                         CCanvas.roomListScr2.show();
                         if (CCanvas.gameScr != null) {
                             CCanvas.gameScr.onClearMap();
                             CCanvas.gameScr = null;
                         }
-                        GameService.gI().changeRoomName();
+                        GameService.gI().changeRoomName(); // thực thi -19
                         break;
                     }
                     case 7: {
@@ -2327,7 +2328,7 @@ public class MessageHandler implements IMessageHandler {
                             byte roomNameID = msg.reader().readByte();
                             String roomName = msg.reader().readUTF();
                             byte levelRoom = msg.reader().readByte();
-                            CCanvas.roomListScr2.changeName(roomNameID + levelRoom + 1, roomName);
+                            CCanvas.roomListScr2.changeName(roomNameID, roomName);
                             ++i;
                         }
                         break;

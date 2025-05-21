@@ -325,7 +325,8 @@ public class LoginScr extends CScreen {
                 this.connect();
             }
 
-            GameService.gI().getProviderAgent();
+//            GameService.gI().getProviderAgent();
+            GameMidlet.version = "2.3.0";
             GameService.gI().login(user, pass, GameMidlet.version);
         }
     }

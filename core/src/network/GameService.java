@@ -63,7 +63,7 @@ public class GameService {
 
     public void requestEmptyRoom(byte type, byte level, String id) {
         CRes.out("=========> Gameservice request empty room type = " + type + " lv = " + level + " id = " + id);
-        Message m = new Message((byte) -28);
+        Message m = new Message((byte) 6);
 
         try {
             m.writer().writeByte(type);
