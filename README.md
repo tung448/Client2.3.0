@@ -1,6 +1,3 @@
-# Army2 CLient - LibGDX
-
-Đây là Project **Army2 Client** được viết lại trên nền tảng **LibGDX**, và được chia sẻ với mọi người.
 
 ## Giới thiệu
 - Vì là hàng share và chưa được hoàn thiện hoàn toàn, nên có thể gặp một số lỗi trong quá trình chạy.
